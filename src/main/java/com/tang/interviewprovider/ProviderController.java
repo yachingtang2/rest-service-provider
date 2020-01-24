@@ -28,7 +28,7 @@ public class ProviderController {
   }
 
   @GetMapping("/order")
-  public ResponseEntity<FoodOrder> getOrder(@RequestParam(defaultValue = "French Fries") String item,
+  public ResponseEntity<FoodOrder> getOrder(@RequestParam(value="name", defaultValue = "French Fries") String item,
                                        @RequestParam() int count) {
     Food food = new Food(item);
     FoodOrder foodOrder = new FoodOrder(food, count);

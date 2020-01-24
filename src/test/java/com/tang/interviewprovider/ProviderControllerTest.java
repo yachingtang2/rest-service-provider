@@ -51,7 +51,7 @@ public class ProviderControllerTest {
 
   @Test
   void getCokeOk() throws Exception {
-    mvc.perform(get("/order?item=coke&count=1")
+    mvc.perform(get("/order?name=coke&count=1")
         .accept(MediaType.APPLICATION_JSON))
       .andExpect(status().isOk())
       .andExpect(content().string("{\"food\":{\"name\":\"coke\"},\"count\":1}"));
